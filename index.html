@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>André Pinho | Infraestrutura · DevOps · Cloud</title>
+    <meta name="description" content="André Henrique Bolognini Pinho - Analista de Infraestrutura, DevOps e Cloud. Especialista em AWS, Docker, CI/CD, Monitoramento e Segurança Operacional.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Matrix / Particles Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="nav-logo-prompt">root@andre:~$</span>
+                <span class="nav-logo-cursor">_</span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#about" class="nav-link"><span class="cmd">./</span>sobre</a></li>
+                <li><a href="#skills" class="nav-link"><span class="cmd">./</span>skills</a></li>
+                <li><a href="#projects" class="nav-link"><span class="cmd">./</span>projetos</a></li>
+                <li><a href="#experience" class="nav-link"><span class="cmd">./</span>experiencia</a></li>
+                <li><a href="#contact" class="nav-link"><span class="cmd">./</span>contato</a></li>
+                <li><a href="https://gitlab.com/andrehbpinho" target="_blank" rel="noopener" class="nav-link nav-cta">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.91-5.88a.84.84 0 0 1 .8-.58h6.17l-1.5-4.62a.84.84 0 0 1 .8-1.1h5.1a.84.84 0 0 1 .8 1.1L15.57 7h6.17a.84.84 0 0 1 .8.58l1.91 5.88a.84.84 0 0 1-.3.94z"/></svg>
+                    GitLab
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="status-dot"></span>
+                <span id="typing-status">Disponível para projetos</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-title-line">André Pinho</span>
+                <span class="hero-title-line hero-title-sub">
+                    <span class="bracket">[</span>
+                    <span id="hero-typing">Infraestrutura</span>
+                    <span class="cursor">|</span>
+                    <span class="bracket">]</span>
+                </span>
+            </h1>
+            <p class="hero-desc">
+                Analista de Infraestrutura & DevOps. 15+ anos construindo, monitorando e automatizando ambientes críticos. 
+                Do bare metal à nuvem, do incidente à observabilidade.
+            </p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">
+                    <span class="btn-icon">$</span> ver_projetos.sh
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span class="btn-icon">&gt;</span> ./contato
+                </a>
+            </div>
+        </div>
+        
+        <!-- Terminal Widget -->
+        <div class="terminal-wrapper">
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <div class="terminal-title">andre@infra: ~</div>
+                    <div class="terminal-actions">
+                        <span class="terminal-tab">bash</span>
+                    </div>
+                </div>
+                <div class="terminal-body" id="terminal-body">
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">andre@infra:~$</span>
+                        <span class="terminal-cmd">whoami</span>
+                    </div>
+                    <div class="terminal-output">André Henrique Bolognini Pinho — Analista de Infraestrutura | DevOps | Cloud | Segurança Operacional</div>
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">andre@infra:~$</span>
+                        <span class="terminal-cmd">uptime --career</span>
+                    </div>
+                    <div class="terminal-output">15+ years online — Linux · Windows · AWS · Docker · K8s · CI/CD · Observability</div>
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">andre@infra:~$</span>
+                        <span class="terminal-cmd">cat /etc/current-role</span>
+                    </div>
+                    <div class="terminal-output">Elotech Gestão Pública — Analista de Infraestrutura (2020–atual)</div>
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">andre@infra:~$</span>
+                        <span class="terminal-cmd typed-cursor" id="current-cmd"></span><span class="cursor blink">_</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">$ cat sobre-mim.txt</span>
+                <h2 class="section-title">Sobre</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="about-lead">
+                        Profissional de TI desde 2010, atuando na linha de frente entre a infraestrutura e a operação. 
+                        Meu dia a dia é garantir que sistemas críticos permaneçam <span class="highlight">disponíveis, monitorados e seguros</span>.
+                    </p>
+                    <p>
+                        Trabalho com administração de servidores Linux e Windows, Active Directory, redes, firewalls, 
+                        cloud AWS, containers Docker/ECS, pipelines CI/CD com GitLab, e stacks de observabilidade 
+                        completas: Zabbix, Grafana, Prometheus e CloudWatch.
+                    </p>
+                    <p>
+                        Nos últimos anos, aprofundei atuação em <strong>troubleshooting de incidentes</strong>, 
+                        <strong>automação operacional</strong> com Bash/Python/PowerShell, 
+                        <strong>segurança operacional</strong> (WAF, Fail2Ban, certificados, bastion) 
+                        e <strong>IA assistiva</strong> para acelerar diagnóstico e documentação.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <div class="stat-number" data-count="15">0</div>
+                            <div class="stat-label">anos de experiência</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-count="50">0</div>
+                            <div class="stat-label">projetos entregues</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-count="99">0</div>
+                            <div class="stat-label">% uptime alvo</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-dot red"></span>
+                            <span class="code-dot yellow"></span>
+                            <span class="code-dot green"></span>
+                            <span class="code-filename">andre-profile.yaml</span>
+                        </div>
+                        <pre class="code-content"><code><span class="code-key">infraestruturista</span>:
+  <span class="code-key">nome</span>: <span class="code-str">"André Pinho"</span>
+  <span class="code-key">local</span>: <span class="code-str">"Sarandi/Maringá - PR"</span>
+  <span class="code-key">formacao</span>:
+    - <span class="code-str">"Pós Segurança Ofensiva & Cyber Intelligence"</span>
+    - <span class="code-str">"Análise e Desenvolvimento de Sistemas"</span>
+  <span class="code-key">certificacoes</span>:
+    - <span class="code-str">"AWS (em andamento)"</span>
+  <span class="code-key">interesses</span>:
+    - <span class="code-str">"Observabilidade"</span>
+    - <span class="code-str">"DevOps/SRE"</span>
+    - <span class="code-str">"Segurança Operacional"</span>
+    - <span class="code-str">"IaC & Automação"</span>
+  <span class="code-key">status</span>: <span class="code-str">"online"</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">$ ls -la /competencias/</span>
+                <h2 class="section-title">Skills & Stack</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-cat-header">
+                        <div class="skill-icon">🖥️</div>
+                        <h3>Infraestrutura & Sistemas</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-tag" data-level="95">Linux</span>
+                        <span class="skill-tag" data-level="90">Windows Server</span>
+                        <span class="skill-tag" data-level="92">Active Directory</span>
+                        <span class="skill-tag" data-level="88">LDAP / SSO</span>
+                        <span class="skill-tag" data-level="85">VMware ESXi</span>
+                        <span class="skill-tag" data-level="90">DNS / DHCP</span>
+                        <span class="skill-tag" data-level="87">SSL/TLS</span>
+                        <span class="skill-tag" data-level="85">Firewall</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-cat-header">
+                        <div class="skill-icon">☁️</div>
+                        <h3>Cloud & DevOps</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-tag" data-level="88">AWS</span>
+                        <span class="skill-tag" data-level="92">Docker</span>
+                        <span class="skill-tag" data-level="85">Docker Compose</span>
+                        <span class="skill-tag" data-level="82">ECS</span>
+                        <span class="skill-tag" data-level="90">GitLab CI/CD</span>
+                        <span class="skill-tag" data-level="88">Nginx</span>
+                        <span class="skill-tag" data-level="85">Traefik</span>
+                        <span class="skill-tag" data-level="87">Cloudflare</span>
+                        <span class="skill-tag" data-level="80">CloudFront / WAF</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-cat-header">
+                        <div class="skill-icon">📊</div>
+                        <h3>Monitoramento & Observability</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-tag" data-level="92">Zabbix</span>
+                        <span class="skill-tag" data-level="90">Grafana</span>
+                        <span class="skill-tag" data-level="88">Prometheus</span>
+                        <span class="skill-tag" data-level="85">CloudWatch</span>
+                        <span class="skill-tag" data-level="82">Logs / Alertas</span>
+                        <span class="skill-tag" data-level="87">Dashboards</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-cat-header">
+                        <div class="skill-icon">🛡️</div>
+                        <h3>Segurança & Automação</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-tag" data-level="90">Bash</span>
+                        <span class="skill-tag" data-level="88">PowerShell</span>
+                        <span class="skill-tag" data-level="82">Python</span>
+                        <span class="skill-tag" data-level="85">Fail2Ban</span>
+                        <span class="skill-tag" data-level="88">SSH / Bastion</span>
+                        <span class="skill-tag" data-level="83">Vault (básico)</span>
+                        <span class="skill-tag" data-level="80">K8s / OKE (sustentação)</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-cat-header">
+                        <div class="skill-icon">🗄️</div>
+                        <h3>Bancos de Dados</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-tag" data-level="88">PostgreSQL</span>
+                        <span class="skill-tag" data-level="85">RDS PostgreSQL</span>
+                        <span class="skill-tag" data-level="80">Oracle</span>
+                        <span class="skill-tag" data-level="82">CloudBeaver</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-cat-header">
+                        <div class="skill-icon">🤖</div>
+                        <h3>IA Assistiva & Ferramentas</h3>
+                    </div>
+                    <div class="skill-items">
+                        <span class="skill-tag" data-level="90">Ollama</span>
+                        <span class="skill-tag" data-level="92">Claude Code</span>
+                        <span class="skill-tag" data-level="90">OpenAI Codex</span>
+                        <span class="skill-tag" data-level="88">Documentação com IA</span>
+                        <span class="skill-tag" data-level="85">Diagnóstico assistido</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">$ docker ps --format "projetos"</span>
+                <h2 class="section-title">Projetos</h2>
+                <p class="section-desc">Clique em qualquer projeto para ver detalhes técnicos e solicitar acesso ao repositório.</p>
+            </div>
+            <div class="projects-grid" id="projects-grid">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">$ journalctl --user=andre --lines=3</span>
+                <h2 class="section-title">Experiência</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">abr/2020 — atual</div>
+                        <h3 class="timeline-role">Analista de Infraestrutura</h3>
+                        <div class="timeline-company">Elotech Gestão Pública · Maringá, PR</div>
+                        <p class="timeline-desc">
+                            Sustentação de infraestrutura corporativa, servidores Linux/Windows, AD, redes, firewall. 
+                            CI/CD com GitLab, containers Docker/ECS na AWS, monitoramento Zabbix/Grafana/Prometheus/CloudWatch. 
+                            Troubleshooting de incidentes, bancos PostgreSQL/RDS/Oracle, automações Bash/PowerShell/Python. 
+                            Segurança operacional com Cloudflare/WAF, Fail2Ban, certificados e bastion SSH.
+                        </p>
+                        <div class="timeline-tags">
+                            <span>AWS</span><span>Docker</span><span>ECS</span><span>CI/CD</span><span>Zabbix</span><span>Grafana</span><span>Prometheus</span><span>PostgreSQL</span><span>AD</span><span>Cloudflare</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">abr/2019 — abr/2020</div>
+                        <h3 class="timeline-role">Analista de Redes</h3>
+                        <div class="timeline-company">Paraná Assistência Médica Ltda.</div>
+                        <p class="timeline-desc">
+                            Administração de rede corporativa, serviços internos, usuários, permissões, 
+                            recursos compartilhados, conectividade, estações, servidores, backups e suporte técnico.
+                        </p>
+                        <div class="timeline-tags">
+                            <span>Redes</span><span>Windows Server</span><span>Active Directory</span><span>Suporte Técnico</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">jan/2015 — jan/2019</div>
+                        <h3 class="timeline-role">Técnico de TI</h3>
+                        <div class="timeline-company">Syma Solutions</div>
+                        <p class="timeline-desc">
+                            Estruturação de redes, suporte técnico a usuários, manutenção de estações e servidores, 
+                            instalação e configuração de sistemas, atendimento em campo e remoto, padronização de ambientes.
+                        </p>
+                        <div class="timeline-tags">
+                            <span>Infraestrutura</span><span>Suporte</span><span>Redes</span><span>Manutenção</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Access Request Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">$ ssh andre@portfolio -p 22</span>
+                <h2 class="section-title">Contato & Acesso</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 class="contact-title">Vamos conversar?</h3>
+                    <p class="contact-desc">
+                        Seja para uma oportunidade, consultoria, ou apenas trocar ideias sobre infraestrutura, 
+                        DevOps e observabilidade. Meus projetos privados estão no GitLab — caso tenha interesse 
+                        em algum deles, é possível solicitar acesso diretamente pelo Git.
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:andrehbpinho@gmail.com" class="contact-link">
+                            <span class="contact-link-icon">📧</span>
+                            <div>
+                                <div class="contact-link-label">E-mail</div>
+                                <div class="contact-link-value">andrehbpinho@gmail.com</div>
+                            </div>
+                        </a>
+                        <a href="https://linkedin.com/in/andrehbpinho" target="_blank" rel="noopener" class="contact-link">
+                            <span class="contact-link-icon">💼</span>
+                            <div>
+                                <div class="contact-link-label">LinkedIn</div>
+                                <div class="contact-link-value">linkedin.com/in/andrehbpinho</div>
+                            </div>
+                        </a>
+                        <a href="https://gitlab.com/andrehbpinho" target="_blank" rel="noopener" class="contact-link">
+                            <span class="contact-link-icon">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.91-5.88a.84.84 0 0 1 .8-.58h6.17l-1.5-4.62a.84.84 0 0 1 .8-1.1h5.1a.84.84 0 0 1 .8 1.1L15.57 7h6.17a.84.84 0 0 1 .8.58l1.91 5.88a.84.84 0 0 1-.3.94z"/></svg>
+                            </span>
+                            <div>
+                                <div class="contact-link-label">GitLab</div>
+                                <div class="contact-link-value">gitlab.com/andrehbpinho</div>
+                            </div>
+                        </a>
+                        <div class="contact-link">
+                            <span class="contact-link-icon">📱</span>
+                            <div>
+                                <div class="contact-link-label">Telefone / WhatsApp</div>
+                                <div class="contact-link-value">(44) 99739-4695</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-terminal">
+                    <div class="terminal contact-terminal-box">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="terminal-title">access-request.sh</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-output"># Como solicitar acesso aos projetos privados:</div>
+                            <div class="terminal-output spaced">
+1. Escolha um projeto na seção <span class="term-accent">./projetos</span><br>
+2. Clique em <span class="term-accent">"Solicitar Acesso"</span><br>
+3. Uma <span class="term-accent">Issue</span> será aberta automaticamente no GitLab<br>
+4. Descreva brevemente seu interesse no projeto<br>
+5. Recebo a notificação e aprovo o acesso
+                            </div>
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">$</span>
+                                <span class="terminal-cmd">curl -X POST "https://gitlab.com/api/v4/projects/.../issues"</span>
+                            </div>
+                            <div class="terminal-output success">✓ Issue criada. Aguardando aprovação do mantenedor.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-prompt">root@andre:~$</span>
+                    <span class="footer-cmd"> exit</span>
+                </div>
+                <p class="footer-copy">
+                    © 2026 André Pinho. Construído com <span class="heart">♥</span>, Bash e muito café.
+                </p>
+                <div class="footer-links">
+                    <a href="https://gitlab.com/andrehbpinho" target="_blank" rel="noopener">GitLab</a>
+                    <a href="https://linkedin.com/in/andrehbpinho" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="mailto:andrehbpinho@gmail.com">E-mail</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal" id="project-modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <div class="modal-header">
+                <div class="modal-badge" id="modal-badge">PRIVADO</div>
+                <h2 class="modal-title" id="modal-title">Título do Projeto</h2>
+                <p class="modal-subtitle" id="modal-subtitle">Subtítulo</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h4><span class="section-icon">$</span> Descrição</h4>
+                    <p id="modal-desc">Descrição do projeto...</p>
+                </div>
+                <div class="modal-section">
+                    <h4><span class="section-icon">$</span> Stack Técnica</h4>
+                    <div class="modal-stack" id="modal-stack"></div>
+                </div>
+                <div class="modal-section">
+                    <h4><span class="section-icon">$</span> Destaques</h4>
+                    <ul class="modal-highlights" id="modal-highlights"></ul>
+                </div>
+                <div class="modal-section">
+                    <h4><span class="section-icon">$</span> Detalhes do Repositório</h4>
+                    <div class="modal-meta">
+                        <div class="modal-meta-item">
+                            <span class="meta-label">Visibilidade:</span>
+                            <span class="meta-value" id="modal-visibility">Privado</span>
+                        </div>
+                        <div class="modal-meta-item">
+                            <span class="meta-label">Última atividade:</span>
+                            <span class="meta-value" id="modal-activity">-</span>
+                        </div>
+                        <div class="modal-meta-item">
+                            <span class="meta-label">GitLab:</span>
+                            <a href="#" id="modal-link" target="_blank" rel="noopener" class="meta-value link">Ver no GitLab →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" id="modal-access-btn" target="_blank" rel="noopener" class="btn btn-primary btn-full">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.91-5.88a.84.84 0 0 1 .8-.58h6.17l-1.5-4.62a.84.84 0 0 1 .8-1.1h5.1a.84.84 0 0 1 .8 1.1L15.57 7h6.17a.84.84 0 0 1 .8.58l1.91 5.88a.84.84 0 0 1-.3.94z"/></svg>
+                    Solicitar Acesso ao Projeto
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/terminal.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/gitlab-access.js"></script>
+</body>
+</html>

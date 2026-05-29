@@ -1,0 +1,18 @@
+# GitLab Pages — Static Site Deployment
+# This pipeline deploys the portfolio to GitLab Pages
+
+stages:
+  - deploy
+
+pages:
+  stage: deploy
+  image: alpine:latest
+  script:
+    - mkdir -p public
+    - cp -r *.html css js assets public/
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+    - master
